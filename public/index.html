@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern, responsive website foundation built with pure HTML, CSS, and JavaScript featuring 2025 design trends">
+  
+  <!-- Open Graph tags for social sharing -->
+  <meta property="og:title" content="Modern Web Foundation">
+  <meta property="og:description" content="Experience the future of web design with our clean, minimalist approach">
+  <meta property="og:type" content="website">
+  
+  <title>Modern Web Foundation | 2025 Design Trends</title>
+  
+  <!-- Preconnect to Google Fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Header with navigation -->
+  <header class="header" role="banner">
+    <div class="header-container">
+      <a href="#" class="logo" aria-label="Home">
+        <span class="logo-text">Elevate</span>
+      </a>
+      
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list" id="navList">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Crafting Digital<br>Experiences
+        </h1>
+        <p class="hero-subtitle">
+          Embrace the future with warm, grounded design that speaks to the modern era. Built with precision, delivered with purpose.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="#features" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <p class="section-subtitle">Modern solutions for contemporary challenges</p>
+        
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Lightning Fast</h3>
+            <p class="feature-description">
+              Experience blazing speed with optimized performance that keeps your users engaged and satisfied.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 9h18"/>
+                <path d="M9 21V9"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Responsive Design</h3>
+            <p class="feature-description">
+              Flawlessly adapts to any screen size, from mobile devices to ultra-wide displays.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Future Ready</h3>
+            <p class="feature-description">
+              Built with modern web standards and best practices for long-term sustainability.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">Grounded in Excellence</h2>
+            <p class="about-description">
+              We believe in the power of simplicity and the elegance of thoughtful design. Our approach combines warm, earthy aesthetics with bold typography and generous whitespace to create experiences that resonate.
+            </p>
+            <p class="about-description">
+              Every pixel serves a purpose. Every interaction feels natural. This is design that doesn't just look good—it works beautifully.
+            </p>
+            <a href="#contact" class="btn btn-outline">Start Your Journey</a>
+          </div>
+          <div class="about-visual">
+            <div class="visual-shape"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Ready to elevate your digital presence?</p>
+        
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              placeholder="Your name"
+              required
+              aria-required="true"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="your@email.com"
+              required
+              aria-required="true"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              class="form-textarea" 
+              placeholder="Tell us about your project..."
+              rows="5"
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Elevate</span>
+          <p class="footer-tagline">Crafting the future, one pixel at a time.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#features" class="footer-link">Features</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-links">
+          <h3 class="footer-heading">Follow Us</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Twitter</a></li>
+            <li><a href="#" class="footer-link">LinkedIn</a></li>
+            <li><a href="#" class="footer-link">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 Elevate. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
