@@ -1,0 +1,115 @@
+Prompt Template (Simplified but Modern Styling)
+Create a barebones, responsive website foundation with the following requirements:
+Structure
+•	Semantic HTML only (header, main, section, footer).
+
+
+•	Components:
+
+
+o	A header with site name/logo and simple nav.
+
+
+o	A hero section with a heading, subheading, and a call-to-action button.
+
+
+o	Basic typography styles for headings, paragraphs, and links.
+
+
+o	A footer with copyright and minimal links.
+
+
+Styling
+•	Use pure, hand-written CSS only.
+
+
+•	Do not use Tailwind, Bootstrap, shadcn, or any other CSS/UI frameworks or libraries.
+
+
+•	Follow modern CSS best practices:
+
+
+o	CSS variables (:root { --variable }) for colors, fonts, and spacing.
+
+
+o	Fluid typography with clamp().
+
+
+o	Media queries with a mobile-first approach.
+
+
+o	Flexbox and CSS Grid for layout.
+
+
+o	Logical properties (e.g., margin-inline, padding-block) for better internationalization.
+
+
+o	aspect-ratio for consistent media sizing.
+
+
+o	Smooth transitions for hover states.
+
+
+o	Modern units like svh/lvh for stable viewport sizing.
+
+
+o	Dark/light mode support using prefers-color-scheme.
+
+
+•	Include a minimal reset (* { box-sizing: border-box; margin: 0; padding: 0; }).
+
+
+•	Add accessible focus and hover states with clear contrast.
+
+
+JavaScript
+•	Use vanilla JavaScript only.
+
+
+•	Do not use React, Vue, Angular, or any frontend frameworks/libraries.
+
+
+•	Keep it minimal (e.g., toggle mobile navigation menu).
+
+
+Design Direction
+Allow me to choose:
+•	Color palette: [vibrant / muted / pastel / monochrome / dark / light / earthy / futuristic].
+
+
+•	Overall style: [minimalist / bold / playful / elegant / modern / retro / brutalist].
+
+
+•	Tone of voice: [professional / casual / friendly / authoritative / inspirational].
+
+
+•	Art direction: [flat / skeuomorphic / illustrated / geometric / organic / editorial / futuristic].
+
+
+•	Typography style: [sans-serif / serif / monospace / modern geometric / humanist / display].
+
+
+•	Spacing approach: [airy with lots of white space / compact and dense / balanced and modular].
+
+
+•	Button and link style: [rounded soft edges / sharp geometric edges / subtle ghost buttons / bold filled buttons].
+
+
+•	Imagery approach: [photographic / abstract shapes / minimal icons / custom illustrations].
+
+
+•	Motion/interaction feel: [smooth and subtle / bold and snappy / minimal with almost no motion].
+
+
+•	Layout personality: [centered single column / multi-column grid / asymmetrical / card-based].
+
+
+Output
+•	Deliver as separate HTML, CSS, and JS files (no bundlers, no build tools).
+
+
+•	Ensure accessibility best practices (proper alt text, ARIA labels if needed, sufficient contrast).
+
+
+•	The code should be well-commented, clean, and production-ready.
+
