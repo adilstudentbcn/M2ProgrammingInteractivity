@@ -25,27 +25,36 @@
   --color-accent-terra: #C8754E;
   --color-surface: #F1EDE9;
   --color-border: #E0D9D3;
-  
+
   /* Spacing System */
-  --space-xs: 0.5rem;      /* 8px */
-  --space-sm: 1rem;        /* 16px */
-  --space-md: 2rem;        /* 32px */
-  --space-lg: 4rem;        /* 64px */
-  --space-xl: 6rem;        /* 96px */
-  --space-2xl: 8rem;       /* 128px */
-  
+  --space-xs: 0.5rem;
+  /* 8px */
+  --space-sm: 1rem;
+  /* 16px */
+  --space-md: 2rem;
+  /* 32px */
+  --space-lg: 4rem;
+  /* 64px */
+  --space-xl: 6rem;
+  /* 96px */
+  --space-2xl: 8rem;
+  /* 128px */
+
   /* Typography */
   --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  
+
   /* Border Radius */
-  --radius-sm: 0.75rem;    /* 12px - soft rounded edges */
-  --radius-md: 1rem;       /* 16px */
-  --radius-lg: 1.5rem;     /* 24px */
-  
+  --radius-sm: 0.75rem;
+  /* 12px - soft rounded edges */
+  --radius-md: 1rem;
+  /* 16px */
+  --radius-lg: 1.5rem;
+  /* 24px */
+
   /* Shadows */
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-  
+
   /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.2s ease;
@@ -87,6 +96,7 @@ body {
 
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -94,7 +104,7 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
@@ -104,7 +114,12 @@ body {
    Typography Scale with Fluid Sizing
    ============================================ */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-text-primary);
@@ -282,11 +297,11 @@ a {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding-block-start: 5rem;
   }
-  
+
   .nav.active {
     transform: translateX(0);
   }
-  
+
   .nav-list {
     display: flex;
     flex-direction: column;
@@ -294,7 +309,7 @@ a {
     gap: var(--space-sm);
     padding-block: var(--space-lg);
   }
-  
+
   .nav-link {
     font-size: 1.25rem;
     padding-block: var(--space-sm);
@@ -434,10 +449,10 @@ a {
 }
 
 /* ============================================
-   Features Section
+   Pricing Section
    ============================================ */
 
-.features {
+.pricing {
   background-color: var(--color-background);
 }
 
@@ -453,14 +468,14 @@ a {
   margin-block-end: var(--space-lg);
 }
 
-.features-grid {
+.pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-md);
   margin-block-start: var(--space-lg);
 }
 
-.feature-card {
+.pricing-card {
   background-color: var(--color-surface);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
@@ -468,13 +483,13 @@ a {
   transition: var(--transition-smooth);
 }
 
-.feature-card:hover {
+.pricing-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-subtle);
   border-color: var(--color-mocha);
 }
 
-.feature-icon {
+.pricing-icon {
   inline-size: 48px;
   block-size: 48px;
   display: flex;
@@ -486,15 +501,53 @@ a {
   margin-block-end: var(--space-md);
 }
 
-.feature-title {
+.pricing-title {
   font-size: clamp(1.25rem, 3vw, 1.5rem);
   margin-block-end: var(--space-sm);
+  text-align: center;
 }
 
-.feature-description {
+.pricing-description {
   color: var(--color-text-secondary);
   line-height: 1.6;
+  font-weight: bold;
+  text-align: center;
 }
+
+
+/* ============================================
+   Pricing List with Checkmarks
+   ============================================ */
+
+.pricing-card ul {
+  list-style: none;
+  margin-block-start: var(--space-sm);
+  padding: 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-weight: 500;
+  margin-block-end: 0.5rem;
+}
+
+.pricing-card ul li::marker {
+  content: none; /* Ensures no default bullet shows */
+}
+
+.pricing-card ul li {
+  font-size: 1rem;
+}
+
+/* Optional: make the check green to match theme */
+.pricing-card ul li span.check {
+  color: var(--color-accent-green);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
 
 /* ============================================
    About Section
