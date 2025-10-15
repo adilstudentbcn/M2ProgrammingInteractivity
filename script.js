@@ -269,3 +269,23 @@ const targets = [
 })();
 
 console.log("✨ Modern website loaded successfully!");
+
+
+// Prefill contact form with selected plan
+(function initPricingPrefill() {
+  const buttons = document.querySelectorAll('.choose-plan');
+  const message = document.getElementById('message');
+  const nameInput = document.getElementById('name');
+
+  if (!buttons.length || !message) return;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const plan = btn.dataset.plan || 'Starter';
+      message.value = `Hi! I'm interested in the ${plan} plan. Please share more details.`;
+      // Optional: move focus to name for a11y
+      if (nameInput) nameInput.focus();
+    });
+  });
+})();
+
