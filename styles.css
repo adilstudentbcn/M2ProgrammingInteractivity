@@ -625,6 +625,23 @@ a {
   border-radius: var(--radius-md);
   opacity: 0.4;
 }
+/* Liquid effect */
+.liquid {
+  /* Apply the SVG filter */
+  filter: url(#liquid-water);
+  /* Performance hint */
+  will-change: filter;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .liquid {
+    filter: none !important;
+  }
+}
+.liquid { filter: none; transition: filter 200ms ease; }
+.liquid:hover { filter: url(#liquid-water); }
+
 
 /* ============================================
    Contact Section
