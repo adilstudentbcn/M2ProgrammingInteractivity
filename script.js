@@ -137,18 +137,21 @@
 // Header Shadow on Scroll
 // ============================================
 (function initHeaderScroll() {
-  const header = document.querySelector(".header");
+  const header = document.querySelector('.header');
   if (!header) return;
 
-  window.addEventListener(
-    "scroll",
-    function () {
-      const currentScroll = window.pageYOffset;
-      header.style.boxShadow = currentScroll > 50 ? "var(--shadow-subtle)" : "";
-    },
-    { passive: true },
-  );
+  const onScroll = () => {
+    const scrolled = window.pageYOffset > 50;
+    header.classList.toggle('scrolled', scrolled);
+  };
+
+  // run once on load in case we refresh mid-page
+  onScroll();
+
+  // passive listener for perf
+  window.addEventListener('scroll', onScroll, { passive: true });
 })();
+
 
 // ============================================
 // Active Navigation Link Highlighting (ARIA)
