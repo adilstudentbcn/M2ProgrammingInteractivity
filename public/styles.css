@@ -1,7 +1,6 @@
 /* ============================================
    Modern CSS Reset & Base Styles
    ============================================ */
-
 *,
 *::before,
 *::after {
@@ -14,7 +13,6 @@
    CSS Custom Properties (Design Tokens)
    2025 Design Trend: Earthy Mocha Mousse Palette
    ============================================ */
-
 :root {
   /* Color Palette - Light Mode (Mocha Mousse & Earthy Tones) */
   --color-mocha: #A08676;
@@ -45,7 +43,7 @@
 
   /* Border Radius */
   --radius-sm: 0.75rem;
-  /* 12px - soft rounded edges */
+  /* 12px */
   --radius-md: 1rem;
   /* 16px */
   --radius-lg: 1.5rem;
@@ -54,10 +52,12 @@
   /* Shadows */
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
 
-  /* Transitions */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.2s ease;
+/* Transitions (fixed – no nested :root) */
+:root {
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s ease;
 }
 
 /* Dark Mode Support */
@@ -77,7 +77,6 @@
 /* ============================================
    Base Typography & Body Styles
    ============================================ */
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -113,7 +112,6 @@ body {
 /* ============================================
    Typography Scale with Fluid Sizing
    ============================================ */
-
 h1,
 h2,
 h3,
@@ -149,13 +147,12 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--transition-smooth);
+  transition: color var(--transition-smooth);
 }
 
 /* ============================================
    Container & Layout Utilities
    ============================================ */
-
 .container {
   max-inline-size: 1140px;
   margin-inline: auto;
@@ -181,7 +178,6 @@ a {
 /* ============================================
    Header & Navigation
    ============================================ */
-
 .header {
   position: sticky;
   top: 0;
@@ -191,7 +187,10 @@ a {
   -webkit-backdrop-filter: blur(10px);
   border-block-end: 1px solid var(--color-border);
   padding-block: var(--space-sm);
-  transition: var(--transition-smooth);
+  transition:
+    box-shadow var(--transition-smooth),
+    background-color var(--transition-smooth),
+    border-color var(--transition-smooth);
 }
 
 .header-container {
@@ -231,7 +230,7 @@ a {
   padding-block: var(--space-xs);
   padding-inline: var(--space-sm);
   border-radius: var(--radius-sm);
-  transition: var(--transition-smooth);
+  transition: color var(--transition-smooth), transform var(--transition-smooth);
   position: relative;
 }
 
@@ -244,6 +243,12 @@ a {
 .nav-link:focus-visible {
   outline: 3px solid var(--color-mocha);
   outline-offset: 4px;
+}
+
+/* Active nav link via ARIA */
+.nav-link[aria-current="page"] {
+  color: var(--color-mocha);
+  font-weight: 700;
 }
 
 /* Mobile Navigation Toggle */
@@ -269,7 +274,7 @@ a {
   height: 2px;
   background-color: var(--color-text-primary);
   border-radius: 2px;
-  transition: var(--transition-smooth);
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger:nth-child(1) {
@@ -320,7 +325,6 @@ a {
 /* ============================================
    Hero Section
    ============================================ */
-
 .hero {
   min-block-size: 100svh;
   display: flex;
@@ -380,7 +384,6 @@ a {
 /* ============================================
    Buttons
    ============================================ */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -392,7 +395,12 @@ a {
   font-size: 1rem;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: var(--transition-smooth);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    color var(--transition-smooth),
+    background-color var(--transition-smooth),
+    border-color var(--transition-smooth);
   text-align: center;
   min-inline-size: 140px;
 }
@@ -451,7 +459,6 @@ a {
 /* ============================================
    Pricing Section
    ============================================ */
-
 .pricing {
   background-color: var(--color-background);
 }
@@ -480,13 +487,22 @@ a {
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  transition: var(--transition-smooth);
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-smooth);
 }
 
 .pricing-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-subtle);
   border-color: var(--color-mocha);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pricing-card:hover {
+    will-change: transform;
+  }
 }
 
 .pricing-icon {
@@ -514,11 +530,9 @@ a {
   text-align: center;
 }
 
-
 /* ============================================
    Pricing List with Checkmarks
    ============================================ */
-
 .pricing-card ul {
   list-style: none;
   margin-block-start: var(--space-sm);
@@ -534,25 +548,22 @@ a {
 }
 
 .pricing-card ul li::marker {
-  content: none; /* Ensures no default bullet shows */
+  content: none;
 }
 
 .pricing-card ul li {
   font-size: 1rem;
 }
 
-/* Optional: make the check green to match theme */
 .pricing-card ul li span.check {
   color: var(--color-accent-green);
   font-weight: 700;
   margin-right: 0.5rem;
 }
 
-
 /* ============================================
    About Section
    ============================================ */
-
 .about {
   background-color: var(--color-surface);
 }
@@ -611,7 +622,6 @@ a {
 /* ============================================
    Contact Section
    ============================================ */
-
 .contact {
   background-color: var(--color-background);
 }
@@ -645,7 +655,7 @@ a {
   font-size: 1rem;
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  transition: var(--transition-smooth);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .form-input:focus,
@@ -669,7 +679,6 @@ a {
 /* ============================================
    Footer
    ============================================ */
-
 .footer {
   background-color: var(--color-surface);
   padding-block: var(--space-xl);
@@ -737,7 +746,6 @@ a {
 /* ============================================
    Accessibility & Focus States
    ============================================ */
-
 :focus-visible {
   outline: 3px solid var(--color-mocha);
   outline-offset: 4px;

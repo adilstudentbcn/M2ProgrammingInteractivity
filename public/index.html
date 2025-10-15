@@ -2,38 +2,61 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modern Web Foundation | 2025 Design Trends</title>
+
+    <!-- Description -->
     <meta
       name="description"
       content="A modern, responsive website foundation built with pure HTML, CSS, and JavaScript featuring 2025 design trends"
     />
 
-    <!-- Open Graph tags for social sharing -->
+    <!-- Canonical (replace with your live URL once deployed) -->
+    <link rel="canonical" href="https://<your-username>.github.io/<repo>/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Modern Web Foundation" />
     <meta
       property="og:description"
       content="Experience the future of web design with our clean, minimalist approach"
     />
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://<your-username>.github.io/<repo>/"
+    />
+    <meta property="og:image" content="assets/og-image.jpg" />
 
-    <title>Modern Web Foundation | 2025 Design Trends</title>
+    <!-- Twitter (X) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Modern Web Foundation" />
+    <meta
+      name="twitter:description"
+      content="Experience the future of web design with our clean, minimalist approach"
+    />
+    <meta name="twitter:image" content="assets/og-image.jpg" />
 
-    <!-- Preconnect to Google Fonts for performance -->
+    <!-- PWA/theming nicety -->
+    <meta name="theme-color" content="#A08676" />
+
+    <!-- Fonts & CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
+
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- Header with navigation -->
     <header class="header" role="banner">
       <div class="header-container">
-        <a href="#" class="logo" aria-label="Home">
+        <a href="#home" class="logo" aria-label="Home">
           <span class="logo-text">Elevate</span>
         </a>
 
@@ -49,8 +72,10 @@
         <button
           class="mobile-toggle"
           id="mobileToggle"
+          type="button"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
+          aria-controls="navList"
         >
           <span class="hamburger"></span>
           <span class="hamburger"></span>
@@ -159,6 +184,7 @@
                 name="name"
                 class="form-input"
                 placeholder="Your name"
+                autocomplete="name"
                 required
                 aria-required="true"
               />
@@ -172,6 +198,7 @@
                 name="email"
                 class="form-input"
                 placeholder="your@email.com"
+                autocomplete="email"
                 required
                 aria-required="true"
               />
@@ -234,7 +261,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="/script.js"></script>
   </body>
 </html>
