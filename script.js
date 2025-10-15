@@ -214,6 +214,28 @@
     { threshold: 0.12, rootMargin: "0px 0px -50px 0px" },
   );
 
+  // liquid water effect
+  (function liquidMouseIntensity() {
+  const img = document.querySelector('.about-image.liquid');
+  const disp = document.getElementById('liquid-displace');
+  if (!img || !disp) return;
+
+  img.addEventListener('mousemove', (e) => {
+    const r = img.getBoundingClientRect();
+    const dx = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
+    const dy = (e.clientY - r.top) / r.height - 0.5;   // -0.5 .. 0.5
+    const strength = Math.min(1, Math.sqrt(dx*dx + dy*dy) * 2); // 0..1+
+    const scale = 6 + strength * 16; // 6..22
+    disp.setAttribute('scale', scale.toFixed(1));
+  });
+
+  img.addEventListener('mouseleave', () => {
+    disp.setAttribute('scale', '8'); // back to baseline
+  });
+})();
+
+  
+
   targets.forEach((el) => obs.observe(el));
 })();
 
