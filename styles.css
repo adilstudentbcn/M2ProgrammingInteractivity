@@ -797,6 +797,29 @@ a {
   font-size: 0.875rem;
 }
 
+
+/* ============================================
+   Reveal Animations
+   ============================================ */
+.section,
+.pricing-card,
+.section-title,
+.about-image {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Once visible (JS adds inline styles to override) */
+.section.visible,
+.pricing-card.visible,
+.section-title.visible,
+.about-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* ============================================
    Accessibility & Focus States
    ============================================ */
