@@ -642,6 +642,33 @@ a {
 .liquid { filter: none; transition: filter 200ms ease; }
 .liquid:hover { filter: url(#liquid-water); }
 
+/*video sexction */
+.video-section {
+  background-color: var(--color-surface);
+  text-align: center;
+  padding-block: var(--space-2xl);
+}
+
+.video-wrapper {
+  position: relative;
+  max-inline-size: 900px;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  transition: transform 0.6s ease;
+}
+
+.video-wrapper video.playing {
+  transform: scale(1.01);
+}
 
 /* ============================================
    Contact Section
