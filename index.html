@@ -163,7 +163,7 @@
               <a href="#contact" class="btn btn-outline">Start Your Journey</a>
             </div>
             <div class="about-visual">
-            <img src="assests/about-workspace.jpg" alt="Creative workspace with designers collaborating" class="about-image" />
+            <img src="assests/about-workspace.jpg" alt="Creative workspace with designers collaborating" class="about-image liquid" />
             </div>
 
           </div>
@@ -264,5 +264,41 @@
         </div>
       </div>
     </footer>
+    <!-- Liquid water-flow filter (SVG) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <filter id="liquid-water">
+    <!-- Organic noise -->
+    <feTurbulence
+      type="fractalNoise"
+      baseFrequency="0.012 0.02"
+      numOctaves="2"
+      seed="3"
+      result="noise"
+    >
+      <!-- Gentle, endless drift -->
+      <animate attributeName="baseFrequency"
+               dur="9s"
+               values="0.012 0.02; 0.02 0.012; 0.012 0.02"
+               repeatCount="indefinite" />
+    </feTurbulence>
+
+    <!-- Displace the source graphic with the noise -->
+    <feDisplacementMap
+      id="liquid-displace"
+      in="SourceGraphic"
+      in2="noise"
+      scale="8"
+      xChannelSelector="R"
+      yChannelSelector="G"
+    >
+      <!-- Breathe the intensity -->
+      <animate attributeName="scale"
+               dur="7s"
+               values="6;12;6"
+               repeatCount="indefinite" />
+    </feDisplacementMap>
+  </filter>
+</svg>
+
   </body>
 </html>
