@@ -632,13 +632,36 @@ a {
   align-items: center;
   justify-content: center;
 }
+/* Subtle floating / liquid motion for About image */
 .about-image {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-subtle);
-  object-fit: cover;
+  transform-origin: center;
+  animation: floatWave 6s var(--ease-sine-in-out) infinite alternate;
 }
+
+@keyframes floatWave {
+  0% {
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: scale(1.02) rotate(0.5deg) translateY(-4px);
+  }
+  100% {
+    transform: scale(1) rotate(-0.5deg) translateY(4px);
+  }
+}
+
+/* Respect accessibility (disable for prefers-reduced-motion users) */
+@media (prefers-reduced-motion: reduce) {
+  .about-image {
+    animation: none;
+  }
+}
+
 
 .visual-shape {
   inline-size: 100%;
