@@ -532,6 +532,35 @@ a {
   font-weight: bold;
   text-align: center;
 }
+/* Badge on the popular plan */
+.pricing-card {
+  position: relative;
+}
+
+.plan-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-mocha);
+  color: var(--color-background);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.pricing-cta {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+}
+
+/* Make the middle card stand out slightly */
+.pricing-card:nth-child(2) {
+  border-color: var(--color-mocha);
+  box-shadow: var(--shadow-subtle);
+}
 
 /* ============================================
    Pricing List with Checkmarks
