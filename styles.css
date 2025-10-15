@@ -640,7 +640,8 @@ a {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-subtle);
   transform-origin: center;
-  animation: floatWave 6s var(--ease-sine-in-out) infinite alternate;
+ animation: floatWave 8s var(--ease-cubic-in-out) infinite alternate;
+
 }
 
 @keyframes floatWave {
