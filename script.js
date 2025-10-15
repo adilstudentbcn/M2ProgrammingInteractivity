@@ -234,6 +234,31 @@
   });
 })();
 
+  // --- Video Auto Play/Pause when in view ---
+(function videoAutoplayObserver() {
+  const video = document.getElementById("backgroundVideo");
+  if (!video) return;
+
+  const handleVideo = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        video.play();
+        video.classList.add("playing");
+      } else {
+        video.pause();
+        video.classList.remove("playing");
+      }
+    });
+  };
+
+  const videoObserver = new IntersectionObserver(handleVideo, {
+    threshold: 0.5,
+  });
+
+  videoObserver.observe(video);
+})();
+
+
   
 
   targets.forEach((el) => obs.observe(el));
