@@ -191,12 +191,13 @@
 (function initAnimations() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  const targets = [
-    ...document.querySelectorAll(".pricing-card"),
-    ...document.querySelectorAll(".section-title"),
-    document.querySelector(".about-text"),
-    document.querySelector(".about-visual"),
-  ].filter(Boolean);
+const targets = [
+  ...document.querySelectorAll(".section"),       
+  ...document.querySelectorAll(".pricing-card"),  
+  ...document.querySelectorAll(".section-title"), 
+  ...document.querySelectorAll(".about-image"),   
+].filter(Boolean);
+
 
   targets.forEach((el, i) => {
     el.style.opacity = "0";
